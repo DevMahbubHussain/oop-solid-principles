@@ -40,12 +40,12 @@ $student2->result = $result2;
 
 
 
-function DisplayStudentInfo($student1) {
-  echo $student1->name . PHP_EOL;
-  echo $student1->email . PHP_EOL;
-  echo $student1->address . PHP_EOL;
-  echo $student1->result->GetAverage() . PHP_EOL;  
-  echo $student1->result->GetPassOrFail() . PHP_EOL;
+function DisplayStudentInfo(Student $student) {
+  echo $student->name . PHP_EOL;
+  echo $student->email . PHP_EOL;
+  echo $student->address . PHP_EOL;
+  echo $student->result->GetAverage() . PHP_EOL;  
+  echo $student->result->GetPassOrFail() . PHP_EOL;
 }
 
 DisplayStudentInfo($student1);
