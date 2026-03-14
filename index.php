@@ -1,8 +1,9 @@
 <?php
 
 use App\Result;
+use App\Result2;
 use App\Student;
-
+use App\Student2;
 
 require_once __DIR__.'/vendor/autoload.php';
 
@@ -39,14 +40,28 @@ $result1->GetPassOrFail();
 $student2->result = $result2;
 
 
+$student3 = new Student2();
+$student3->name='Mamun';
+$student3->email='Mamun@gmail.com';
+$student3->address='KowToli';
 
-function DisplayStudentInfo(Student $student) {
-  echo $student->name . PHP_EOL;
-  echo $student->email . PHP_EOL;
-  echo $student->address . PHP_EOL;
-  echo $student->result->GetAverage() . PHP_EOL;  
-  echo $student->result->GetPassOrFail() . PHP_EOL;
+$result3 = new Result2();
+$result3->phy = 60;
+$result3->ches = 50;
+$result3->math = 60;
+$result3->bio = 60;
+
+$student3->result2 = $result3;
+
+
+
+function DisplayStudentInfo(Student2 $student2) {
+  echo $student2->name . PHP_EOL;
+  echo $student2->email . PHP_EOL;
+  echo $student2->address . PHP_EOL;
+  echo $student2->result2->GetAverage() . PHP_EOL;  
+  echo $student2->result2->GetPasOrFail() . PHP_EOL;
 }
 
-DisplayStudentInfo($student1);
-DisplayStudentInfo($student2);
+DisplayStudentInfo($student3);
+// DisplayStudentInfo($student2);
